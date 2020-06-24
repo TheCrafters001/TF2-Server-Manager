@@ -60,6 +60,23 @@
     <None Include="App.config" />
     <None Include="My Project\app.manifest" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="Server_Manager_Main.Designer.vb">
+      <DependentUpon>Server_Manager_Main.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Server_Manager_Main.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Server_Manager_Main.resx">
+      <DependentUpon>Server_Manager_Main.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
