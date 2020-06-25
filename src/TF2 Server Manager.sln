@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TF2 Server Manager", "TF2 Server Manager\TF2 Server Manager.vbproj", "{B81E4110-E156-4259-93EF-C5D1729DFE7A}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TF2 Server Manager Console", "TF2 Server Manager Console\TF2 Server Manager Console.vbproj", "{CFBF1ED1-215C-4EA7-8CEE-AF34DD9136FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B81E4110-E156-4259-93EF-C5D1729DFE7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B81E4110-E156-4259-93EF-C5D1729DFE7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B81E4110-E156-4259-93EF-C5D1729DFE7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFBF1ED1-215C-4EA7-8CEE-AF34DD9136FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFBF1ED1-215C-4EA7-8CEE-AF34DD9136FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFBF1ED1-215C-4EA7-8CEE-AF34DD9136FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFBF1ED1-215C-4EA7-8CEE-AF34DD9136FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
