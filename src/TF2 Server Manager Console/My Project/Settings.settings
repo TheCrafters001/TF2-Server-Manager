@@ -1,7 +1,36 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" UseMySettingsClassName="true">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="Server_Name" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TF2 Server</Value>
+    </Setting>
+    <Setting Name="Startup_Map" Type="System.String" Scope="User">
+      <Value Profile="(Default)">pl_upward</Value>
+    </Setting>
+    <Setting Name="Max_Players" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">24</Value>
+    </Setting>
+    <Setting Name="Server_Port" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">27015</Value>
+    </Setting>
+    <Setting Name="SV_PURE" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="SV_LAN" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="sv_region" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="mp_disable_respawn_times" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="sv_alltalk" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="folder" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Server Manager\Servers\TF2\</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>
