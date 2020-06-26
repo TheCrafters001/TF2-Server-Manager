@@ -46,7 +46,7 @@
             ElseIf MenuSelect = 2 Then
                 Server_Manager.StartServerWithNewSettings()
             ElseIf MenuSelect = 3 Then
-
+                Server_Manager.SettingsNoStart()
             ElseIf MenuSelect = 4 Then
                 About()
                 Console.WriteLine("")
