@@ -7,6 +7,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TF2 Server Manager", "TF2 S
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TF2 Server Manager Console", "TF2 Server Manager Console\TF2 Server Manager Console.vbproj", "{CFBF1ED1-215C-4EA7-8CEE-AF34DD9136FC}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DownloadFile", "DownloadFile\DownloadFile.vbproj", "{0415E282-86EB-4284-8402-E303601E54CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{CFBF1ED1-215C-4EA7-8CEE-AF34DD9136FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFBF1ED1-215C-4EA7-8CEE-AF34DD9136FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFBF1ED1-215C-4EA7-8CEE-AF34DD9136FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0415E282-86EB-4284-8402-E303601E54CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0415E282-86EB-4284-8402-E303601E54CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0415E282-86EB-4284-8402-E303601E54CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0415E282-86EB-4284-8402-E303601E54CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

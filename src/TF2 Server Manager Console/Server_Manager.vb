@@ -1,4 +1,6 @@
-﻿Public Class Server_Manager
+﻿Imports DownloadFile.Downloader
+
+Public Class Server_Manager
 
     Public Shared Sub StartServerWithSettings(ByVal Server_Name As String, ByVal startup_map As String, ByVal Folder As String, ByVal Max_Players As Integer, ByVal Server_Port As Integer, ByVal SV_PURE As Integer, ByVal SV_LAN As Integer, ByVal sv_region As Integer, ByVal mp_disable_respawn_times As Integer, ByVal sv_alltalk As Integer)
         Console.Clear()
@@ -17,6 +19,56 @@
         Console.WriteLine("sv_alltalk              : " & sv_alltalk.ToString)
         Console.WriteLine("Folder Location         : " & Folder)
         Console.WriteLine("")
+        Console.WriteLine("")
+        If My.Computer.FileSystem.FileExists("C:\Server Manager\SteamCMD\SteamCMD.exe") Then
+            ' Do Nothing For Now
+        Else
+            Console.WriteLine("SteamCMD was not found on your system. Would you like to download it? (Internet required)")
+            Console.WriteLine("")
+            Console.Write("Enter a selection [Y/n] = ")
+            Dim SteamCMDDownloader As String = Console.ReadLine()
+            SteamCMDDownloader = SteamCMDDownloader.ToLower
+            If SteamCMDDownloader = "y" Then
+                Console.WriteLine("Okay. Downloading SteamCMD...")
+                Try
+                    SteamCMD_DL("https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip", "steamcmd.zip")
+                Catch ex As Exception
+                    Console.WriteLine("Failed.")
+                    Console.WriteLine("")
+                    Console.WriteLine(ex)
+                    Module1.Menu()
+                End Try
+                Console.WriteLine("Downloaded. Unzipping SteamCMD...")
+                Try
+                    Unzip("steamcmd")
+                Catch ex As Exception
+                    Console.WriteLine("Failed.")
+                    Console.WriteLine("")
+                    Console.WriteLine(ex)
+                    Module1.Menu()
+                End Try
+                Console.WriteLine("SteamCMD installed! Erasing zip file...")
+                Try
+                    My.Computer.FileSystem.DeleteFile("C:\Server Manager\SteamCMD\steamcmd.zip")
+                Catch ex As Exception
+                    Console.WriteLine("Failed.")
+                    Console.WriteLine("")
+                    Console.WriteLine(ex)
+                    Module1.Menu()
+                End Try
+                Console.WriteLine("Done.")
+                Try
+                    Server_Runner.Run(Server_Name, startup_map, Folder, Max_Players, Server_Port, SV_PURE, SV_LAN, sv_region, mp_disable_respawn_times, sv_alltalk)
+                Catch ex As Exception
+                    Console.WriteLine("Failed.")
+                    Console.WriteLine("")
+                    Console.WriteLine(ex)
+                    Module1.Menu()
+                End Try
+            ElseIf SteamCMDDownloader = "n" Then
+                Console.WriteLine("Okay, Not downloading SteamCMD. Operation will now cancel.")
+            End If
+        End If
         Module1.Menu()
     End Sub
 
@@ -69,5 +121,7 @@
         Console.WriteLine("Failed to save settings: Saving Coming Soon")
         Module1.Menu()
     End Sub
+
+
 
 End Class
