@@ -93,7 +93,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Server_Manager.vb" />
-    <Compile Include="Server_Runner.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -120,6 +119,10 @@
     <ProjectReference Include="..\DownloadFile\DownloadFile.vbproj">
       <Project>{0415e282-86eb-4284-8402-e303601e54cd}</Project>
       <Name>DownloadFile</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TF2_Server_Manger_Utlity\TF2_Server_Manger_Utility.vbproj">
+      <Project>{559b336b-49f4-421d-9f80-4adb561f80f8}</Project>
+      <Name>TF2_Server_Manger_Utility</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

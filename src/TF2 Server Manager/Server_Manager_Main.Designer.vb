@@ -24,21 +24,27 @@ Partial Class Server_Manager_Main
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.ServerDetails = New System.Windows.Forms.TabPage()
+        Me.MaxPlayers_TxTBox = New System.Windows.Forms.TextBox()
+        Me.MaxPlayersLBL = New System.Windows.Forms.Label()
         Me.StartupMap_SelectMap = New System.Windows.Forms.ComboBox()
         Me.StartupMap_lbl = New System.Windows.Forms.Label()
         Me.ServerName_TXT_Box = New System.Windows.Forms.TextBox()
         Me.ServerName_lbl = New System.Windows.Forms.Label()
         Me.ServerConfig = New System.Windows.Forms.TabPage()
-        Me.MaxPlayersLBL = New System.Windows.Forms.Label()
-        Me.MaxPlayers_TxTBox = New System.Windows.Forms.TextBox()
-        Me.Srv_Port_TxTBox = New System.Windows.Forms.TextBox()
-        Me.Srv_Port_LbL = New System.Windows.Forms.Label()
-        Me.sv_pure_lbl = New System.Windows.Forms.Label()
-        Me.sv_pure_dropdown = New System.Windows.Forms.ComboBox()
         Me.sv_lan_dropdown = New System.Windows.Forms.ComboBox()
         Me.sv_lan_lbl = New System.Windows.Forms.Label()
+        Me.sv_pure_dropdown = New System.Windows.Forms.ComboBox()
+        Me.sv_pure_lbl = New System.Windows.Forms.Label()
+        Me.Srv_Port_TxTBox = New System.Windows.Forms.TextBox()
+        Me.Srv_Port_LbL = New System.Windows.Forms.Label()
         Me.SettingsPage = New System.Windows.Forms.TabPage()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.mp_disable_respawn_times_DropDown = New System.Windows.Forms.ComboBox()
+        Me.mp_disable_respawn_times_LBL = New System.Windows.Forms.Label()
+        Me.QuestionMark_SV_Lan = New System.Windows.Forms.LinkLabel()
+        Me.Export_Settings_Dialog = New System.Windows.Forms.SaveFileDialog()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.ServerDetails.SuspendLayout()
         Me.ServerConfig.SuspendLayout()
@@ -60,6 +66,8 @@ Partial Class Server_Manager_Main
         '
         'ServerDetails
         '
+        Me.ServerDetails.Controls.Add(Me.Label1)
+        Me.ServerDetails.Controls.Add(Me.TextBox1)
         Me.ServerDetails.Controls.Add(Me.MaxPlayers_TxTBox)
         Me.ServerDetails.Controls.Add(Me.MaxPlayersLBL)
         Me.ServerDetails.Controls.Add(Me.StartupMap_SelectMap)
@@ -73,6 +81,25 @@ Partial Class Server_Manager_Main
         Me.ServerDetails.TabIndex = 0
         Me.ServerDetails.Text = "Server Details"
         Me.ServerDetails.UseVisualStyleBackColor = True
+        '
+        'MaxPlayers_TxTBox
+        '
+        Me.MaxPlayers_TxTBox.Location = New System.Drawing.Point(6, 119)
+        Me.MaxPlayers_TxTBox.MaxLength = 2
+        Me.MaxPlayers_TxTBox.Name = "MaxPlayers_TxTBox"
+        Me.MaxPlayers_TxTBox.Size = New System.Drawing.Size(268, 21)
+        Me.MaxPlayers_TxTBox.TabIndex = 5
+        Me.MaxPlayers_TxTBox.Text = "24"
+        '
+        'MaxPlayersLBL
+        '
+        Me.MaxPlayersLBL.AutoSize = True
+        Me.MaxPlayersLBL.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MaxPlayersLBL.Location = New System.Drawing.Point(6, 97)
+        Me.MaxPlayersLBL.Name = "MaxPlayersLBL"
+        Me.MaxPlayersLBL.Size = New System.Drawing.Size(101, 19)
+        Me.MaxPlayersLBL.TabIndex = 4
+        Me.MaxPlayersLBL.Text = "Max Players"
         '
         'StartupMap_SelectMap
         '
@@ -117,6 +144,9 @@ Partial Class Server_Manager_Main
         '
         'ServerConfig
         '
+        Me.ServerConfig.Controls.Add(Me.QuestionMark_SV_Lan)
+        Me.ServerConfig.Controls.Add(Me.mp_disable_respawn_times_DropDown)
+        Me.ServerConfig.Controls.Add(Me.mp_disable_respawn_times_LBL)
         Me.ServerConfig.Controls.Add(Me.sv_lan_dropdown)
         Me.ServerConfig.Controls.Add(Me.sv_lan_lbl)
         Me.ServerConfig.Controls.Add(Me.sv_pure_dropdown)
@@ -130,65 +160,6 @@ Partial Class Server_Manager_Main
         Me.ServerConfig.TabIndex = 1
         Me.ServerConfig.Text = "Config"
         Me.ServerConfig.UseVisualStyleBackColor = True
-        '
-        'MaxPlayersLBL
-        '
-        Me.MaxPlayersLBL.AutoSize = True
-        Me.MaxPlayersLBL.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MaxPlayersLBL.Location = New System.Drawing.Point(6, 97)
-        Me.MaxPlayersLBL.Name = "MaxPlayersLBL"
-        Me.MaxPlayersLBL.Size = New System.Drawing.Size(101, 19)
-        Me.MaxPlayersLBL.TabIndex = 4
-        Me.MaxPlayersLBL.Text = "Max Players"
-        '
-        'MaxPlayers_TxTBox
-        '
-        Me.MaxPlayers_TxTBox.Location = New System.Drawing.Point(6, 119)
-        Me.MaxPlayers_TxTBox.MaxLength = 2
-        Me.MaxPlayers_TxTBox.Name = "MaxPlayers_TxTBox"
-        Me.MaxPlayers_TxTBox.Size = New System.Drawing.Size(268, 21)
-        Me.MaxPlayers_TxTBox.TabIndex = 5
-        Me.MaxPlayers_TxTBox.Text = "24"
-        '
-        'Srv_Port_TxTBox
-        '
-        Me.Srv_Port_TxTBox.Enabled = False
-        Me.Srv_Port_TxTBox.Location = New System.Drawing.Point(8, 25)
-        Me.Srv_Port_TxTBox.MaxLength = 5
-        Me.Srv_Port_TxTBox.Name = "Srv_Port_TxTBox"
-        Me.Srv_Port_TxTBox.Size = New System.Drawing.Size(268, 21)
-        Me.Srv_Port_TxTBox.TabIndex = 3
-        Me.Srv_Port_TxTBox.Text = "27015"
-        '
-        'Srv_Port_LbL
-        '
-        Me.Srv_Port_LbL.AutoSize = True
-        Me.Srv_Port_LbL.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Srv_Port_LbL.Location = New System.Drawing.Point(8, 3)
-        Me.Srv_Port_LbL.Name = "Srv_Port_LbL"
-        Me.Srv_Port_LbL.Size = New System.Drawing.Size(95, 19)
-        Me.Srv_Port_LbL.TabIndex = 2
-        Me.Srv_Port_LbL.Text = "Server Port"
-        '
-        'sv_pure_lbl
-        '
-        Me.sv_pure_lbl.AutoSize = True
-        Me.sv_pure_lbl.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.sv_pure_lbl.Location = New System.Drawing.Point(8, 49)
-        Me.sv_pure_lbl.Name = "sv_pure_lbl"
-        Me.sv_pure_lbl.Size = New System.Drawing.Size(71, 19)
-        Me.sv_pure_lbl.TabIndex = 4
-        Me.sv_pure_lbl.Text = "sv_pure"
-        '
-        'sv_pure_dropdown
-        '
-        Me.sv_pure_dropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.sv_pure_dropdown.FormattingEnabled = True
-        Me.sv_pure_dropdown.Items.AddRange(New Object() {"Allow Anything", "Allow Limited", "Allow Steam Only"})
-        Me.sv_pure_dropdown.Location = New System.Drawing.Point(8, 71)
-        Me.sv_pure_dropdown.Name = "sv_pure_dropdown"
-        Me.sv_pure_dropdown.Size = New System.Drawing.Size(268, 23)
-        Me.sv_pure_dropdown.TabIndex = 5
         '
         'sv_lan_dropdown
         '
@@ -210,6 +181,46 @@ Partial Class Server_Manager_Main
         Me.sv_lan_lbl.TabIndex = 6
         Me.sv_lan_lbl.Text = "sv_lan"
         '
+        'sv_pure_dropdown
+        '
+        Me.sv_pure_dropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.sv_pure_dropdown.FormattingEnabled = True
+        Me.sv_pure_dropdown.Items.AddRange(New Object() {"Allow Anything", "Allow Limited", "Allow Steam Only"})
+        Me.sv_pure_dropdown.Location = New System.Drawing.Point(8, 71)
+        Me.sv_pure_dropdown.Name = "sv_pure_dropdown"
+        Me.sv_pure_dropdown.Size = New System.Drawing.Size(268, 23)
+        Me.sv_pure_dropdown.TabIndex = 5
+        '
+        'sv_pure_lbl
+        '
+        Me.sv_pure_lbl.AutoSize = True
+        Me.sv_pure_lbl.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.sv_pure_lbl.Location = New System.Drawing.Point(8, 49)
+        Me.sv_pure_lbl.Name = "sv_pure_lbl"
+        Me.sv_pure_lbl.Size = New System.Drawing.Size(71, 19)
+        Me.sv_pure_lbl.TabIndex = 4
+        Me.sv_pure_lbl.Text = "sv_pure"
+        '
+        'Srv_Port_TxTBox
+        '
+        Me.Srv_Port_TxTBox.Enabled = False
+        Me.Srv_Port_TxTBox.Location = New System.Drawing.Point(8, 25)
+        Me.Srv_Port_TxTBox.MaxLength = 5
+        Me.Srv_Port_TxTBox.Name = "Srv_Port_TxTBox"
+        Me.Srv_Port_TxTBox.Size = New System.Drawing.Size(268, 21)
+        Me.Srv_Port_TxTBox.TabIndex = 3
+        Me.Srv_Port_TxTBox.Text = "27015"
+        '
+        'Srv_Port_LbL
+        '
+        Me.Srv_Port_LbL.AutoSize = True
+        Me.Srv_Port_LbL.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Srv_Port_LbL.Location = New System.Drawing.Point(8, 3)
+        Me.Srv_Port_LbL.Name = "Srv_Port_LbL"
+        Me.Srv_Port_LbL.Size = New System.Drawing.Size(95, 19)
+        Me.Srv_Port_LbL.TabIndex = 2
+        Me.Srv_Port_LbL.Text = "Server Port"
+        '
         'SettingsPage
         '
         Me.SettingsPage.Controls.Add(Me.Button1)
@@ -222,12 +233,66 @@ Partial Class Server_Manager_Main
         '
         'Button1
         '
+        Me.Button1.Enabled = False
         Me.Button1.Location = New System.Drawing.Point(428, 402)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(140, 23)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Export Server Settings"
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'mp_disable_respawn_times_DropDown
+        '
+        Me.mp_disable_respawn_times_DropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.mp_disable_respawn_times_DropDown.FormattingEnabled = True
+        Me.mp_disable_respawn_times_DropDown.Items.AddRange(New Object() {"True", "False"})
+        Me.mp_disable_respawn_times_DropDown.Location = New System.Drawing.Point(8, 167)
+        Me.mp_disable_respawn_times_DropDown.Name = "mp_disable_respawn_times_DropDown"
+        Me.mp_disable_respawn_times_DropDown.Size = New System.Drawing.Size(268, 23)
+        Me.mp_disable_respawn_times_DropDown.TabIndex = 9
+        '
+        'mp_disable_respawn_times_LBL
+        '
+        Me.mp_disable_respawn_times_LBL.AutoSize = True
+        Me.mp_disable_respawn_times_LBL.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mp_disable_respawn_times_LBL.Location = New System.Drawing.Point(8, 145)
+        Me.mp_disable_respawn_times_LBL.Name = "mp_disable_respawn_times_LBL"
+        Me.mp_disable_respawn_times_LBL.Size = New System.Drawing.Size(222, 19)
+        Me.mp_disable_respawn_times_LBL.TabIndex = 8
+        Me.mp_disable_respawn_times_LBL.Text = "mp_disable_respawn_times"
+        '
+        'QuestionMark_SV_Lan
+        '
+        Me.QuestionMark_SV_Lan.AutoSize = True
+        Me.QuestionMark_SV_Lan.Location = New System.Drawing.Point(73, 101)
+        Me.QuestionMark_SV_Lan.Name = "QuestionMark_SV_Lan"
+        Me.QuestionMark_SV_Lan.Size = New System.Drawing.Size(14, 15)
+        Me.QuestionMark_SV_Lan.TabIndex = 10
+        Me.QuestionMark_SV_Lan.TabStop = True
+        Me.QuestionMark_SV_Lan.Text = "?"
+        '
+        'Export_Settings_Dialog
+        '
+        Me.Export_Settings_Dialog.CheckFileExists = True
+        Me.Export_Settings_Dialog.Filter = "TF2 Server Manger Settings (*.tf2smset)|*.tf2smset"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(6, 165)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(268, 21)
+        Me.TextBox1.TabIndex = 6
+        Me.TextBox1.Text = "C:\Server Manager\GUI\Servers\TF2\"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(6, 143)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(183, 19)
+        Me.Label1.TabIndex = 7
+        Me.Label1.Text = "Server Folder Location"
         '
         'Server_Manager_Main
         '
@@ -265,4 +330,10 @@ Partial Class Server_Manager_Main
     Friend WithEvents sv_lan_lbl As Label
     Friend WithEvents SettingsPage As TabPage
     Friend WithEvents Button1 As Button
+    Friend WithEvents mp_disable_respawn_times_DropDown As ComboBox
+    Friend WithEvents mp_disable_respawn_times_LBL As Label
+    Friend WithEvents QuestionMark_SV_Lan As LinkLabel
+    Friend WithEvents Export_Settings_Dialog As SaveFileDialog
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TextBox1 As TextBox
 End Class

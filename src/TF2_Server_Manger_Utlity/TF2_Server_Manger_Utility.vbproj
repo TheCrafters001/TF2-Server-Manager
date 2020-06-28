@@ -4,35 +4,31 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B81E4110-E156-4259-93EF-C5D1729DFE7A}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <StartupObject>TF2_Server_Manager.My.MyApplication</StartupObject>
-    <RootNamespace>TF2_Server_Manager</RootNamespace>
-    <AssemblyName>TF2 Server Manager</AssemblyName>
+    <ProjectGuid>{559B336B-49F4-421D-9F80-4ADB561F80F8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TF2_Server_Manger_Utility</RootNamespace>
+    <AssemblyName>TF2_Server_Manger_Utility</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>WindowsForms</MyType>
+    <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>TF2 Server Manager.xml</DocumentationFile>
+    <DocumentationFile>TF2_Server_Manger_Utility.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>TF2 Server Manager.xml</DocumentationFile>
+    <DocumentationFile>TF2_Server_Manger_Utility.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -47,15 +43,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -68,21 +58,13 @@
     <Import Include="System.Collections" />
     <Import Include="System.Collections.Generic" />
     <Import Include="System.Data" />
-    <Import Include="System.Drawing" />
     <Import Include="System.Diagnostics" />
-    <Import Include="System.Windows.Forms" />
     <Import Include="System.Linq" />
     <Import Include="System.Xml.Linq" />
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Server_Manager_Main.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Server_Manager_Main.Designer.vb">
-      <DependentUpon>Server_Manager_Main.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Server_Runner.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -107,12 +89,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Server_Manager_Main.resx">
-      <DependentUpon>Server_Manager_Main.vb</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -122,21 +100,6 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DownloadFile\DownloadFile.vbproj">
-      <Project>{0415e282-86eb-4284-8402-e303601e54cd}</Project>
-      <Name>DownloadFile</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TF2 Server Manager Console\TF2 Server Manager Console.vbproj">
-      <Project>{cfbf1ed1-215c-4ea7-8cee-af34dd9136fc}</Project>
-      <Name>TF2 Server Manager Console</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TF2_Server_Manger_Utlity\TF2_Server_Manger_Utility.vbproj">
-      <Project>{559b336b-49f4-421d-9f80-4adb561f80f8}</Project>
-      <Name>TF2_Server_Manger_Utility</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
