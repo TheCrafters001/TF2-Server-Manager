@@ -14,19 +14,19 @@ Public Class Downloader
     'Will be ignored and closed.
     '
     '- TheCrafters001
-    Public Shared Sub SteamCMD_DL(ByVal fileURL As String, ByVal fileOutput As String)
-        If (Not System.IO.Directory.Exists("C:\Server Manager\SteamCMD\")) Then
-            System.IO.Directory.CreateDirectory("C:\Server Manager\SteamCMD\")
+    Public Shared Sub SteamCMD_DL(ByVal fileURL As String, ByVal fileOutput As String, ByVal Folder As String)
+        If (Not System.IO.Directory.Exists(Folder)) Then
+            System.IO.Directory.CreateDirectory(Folder)
         End If
         Using client = New WebClient()
-            client.DownloadFile(New Uri(fileURL), "C:\Server Manager\SteamCMD\" & fileOutput)
+            client.DownloadFile(New Uri(fileURL), Folder & fileOutput)
         End Using
     End Sub
 
-    Public Shared Sub Unzip(ByVal zipName As String)
-        Dim startPath As String = "C:\Server Manager\SteamCMD\"
-        Dim zipPath As String = "C:\Server Manager\SteamCMD\" & zipName & ".zip"
-        Dim extractPath As String = "C:\Server Manager\SteamCMD\"
+    Public Shared Sub Unzip(ByVal zipName As String, ByVal folder As String)
+        Dim startPath As String = folder
+        Dim zipPath As String = folder & zipName & ".zip"
+        Dim extractPath As String = folder
         ZipFile.ExtractToDirectory(zipPath, extractPath)
     End Sub
 

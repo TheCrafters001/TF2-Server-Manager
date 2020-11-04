@@ -39,7 +39,7 @@ Public Class Server_Manager
             If SteamCMDDownloader = "y" Then
                 Console.WriteLine("Okay. Downloading SteamCMD...")
                 Try
-                    SteamCMD_DL("https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip", "steamcmd.zip")
+                    SteamCMD_DL("https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip", "steamcmd.zip", "C:\Server Manager\SteamCMD\")
                 Catch ex As Exception
                     Console.WriteLine("Failed.")
                     Console.WriteLine("")
@@ -48,7 +48,7 @@ Public Class Server_Manager
                 End Try
                 Console.WriteLine("Downloaded. Unzipping SteamCMD...")
                 Try
-                    Unzip("steamcmd")
+                    Unzip("steamcmd", "C:\Server Manager\SteamCMD\")
                 Catch ex As Exception
                     Console.WriteLine("Failed.")
                     Console.WriteLine("")
@@ -147,7 +147,7 @@ Public Class Server_Manager
             If SteamCMDDownloader = "y" Then
                 Console.WriteLine("Okay. Downloading SteamCMD...")
                 Try
-                    SteamCMD_DL("https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip", "steamcmd.zip")
+                    SteamCMD_DL("https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip", "steamcmd.zip", "C:\Server Manager\SteamCMD\")
                 Catch ex As Exception
                     Console.WriteLine("Failed.")
                     Console.WriteLine("")
@@ -156,7 +156,7 @@ Public Class Server_Manager
                 End Try
                 Console.WriteLine("Downloaded. Unzipping SteamCMD...")
                 Try
-                    Unzip("steamcmd")
+                    Unzip("steamcmd", "C:\Server Manager\SteamCMD\")
                 Catch ex As Exception
                     Console.WriteLine("Failed.")
                     Console.WriteLine("")
